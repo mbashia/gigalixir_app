@@ -1,0 +1,13 @@
+<h1>Show Tip</h1>
+
+<ul>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @tip.body %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.tip_path(@conn, :edit, @tip) %></span> |
+<span><%= link "Back", to: Routes.tip_path(@conn, :index) %></span>

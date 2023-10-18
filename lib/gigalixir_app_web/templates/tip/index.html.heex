@@ -1,0 +1,26 @@
+<h1>Listing Tips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tip <- @tips do %>
+    <tr>
+      <td><%= tip.body %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.tip_path(@conn, :show, tip) %></span>
+        <span><%= link "Edit", to: Routes.tip_path(@conn, :edit, tip) %></span>
+        <span><%= link "Delete", to: Routes.tip_path(@conn, :delete, tip), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tip", to: Routes.tip_path(@conn, :new) %></span>
