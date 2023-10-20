@@ -4,6 +4,7 @@ defmodule GigalixirApp.Tips.Tip do
 
   schema "tips" do
     field :body, :string
+    field :title, :string
 
     timestamps()
   end
@@ -11,7 +12,7 @@ defmodule GigalixirApp.Tips.Tip do
   @doc false
   def changeset(tip, attrs) do
     tip
-    |> cast(attrs, [:body])
-    |> validate_required([:body])
+    |> cast(attrs, [:body,:title])
+    |> validate_required([:body,:title])
   end
 end

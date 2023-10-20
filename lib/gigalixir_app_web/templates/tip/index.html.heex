@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Body</th>
+      <th>Title</th>
 
       <th></th>
     </tr>
@@ -12,6 +13,7 @@
 <%= for tip <- @tips do %>
     <tr>
       <td><%= tip.body %></td>
+       <td><%= tip.title %></td>
 
       <td>
         <span><%= link "Show", to: Routes.tip_path(@conn, :show, tip) %></span>
